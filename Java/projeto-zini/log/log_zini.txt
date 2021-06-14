@@ -1,0 +1,20 @@
+05/06/2021 21:22:26 usuario nao encontrado 
+
+05/06/2021 21:55:15 Login efetuado com sucesso !! 
+
+05/06/2021 22:20:09 Usuario realizou login !! 
+
+05/06/2021 22:28:47 Sistema zini está com o horário correto!! 
+
+05/06/2021 22:28:47 Usuário realizou login !! 
+
+05/06/2021 22:30:47 Sistema zini está com o horário correto!! 
+
+05/06/2021 22:30:47 Usuário realizou login !! 
+
+05/06/2021 22:32:02 Sistema zini está com o horário correto!! 
+
+05/06/2021 22:32:02 Usuário realizou login !! 
+
+05/06/2021 22:32:02 Sistema zini está exibindo mensagens corretamente!! 
+

@@ -1,0 +1,86 @@
+create database bd_gsn;
+
+use bd_gsn;
+
+
+
+
+
+
+
+create table tbEquipe(
+
+idEquipe int primary key auto_increment,
+nomeEquipe varchar(60),
+dataFundacao varchar(60),
+segmentoEquipe varchar(60),
+descricaoEquipe varchar(60)
+);
+
+create table tbUsuario (
+
+idUsuario int primary key auto_increment,
+nomeUsuario varchar(60),
+emailUsuario varchar(60),
+cpfUsuario varchar(60),
+celularUsuario varchar(60),
+cep varchar(60),
+rua varchar(60),
+bairro varchar(60),
+cidade varchar(60),
+senha varchar(60),
+codigoRecuperarSenha varchar(60),
+fkEquipe int,
+foreign key (fkEquipe) references tbEquipe (idEquipe)
+);
+
+
+insert into tbEquipe values (1,'Bandtec', '05/08/2020', 'Ensino', 'Uma faculdade');
+insert into tbUsuario values(2, 'Guilherme Nascimento','guilherme@bandtec.com','123.456.789','11 934271649', '03940-923', 'Rua Alfredo de souza', 'Jardins', 'São Paulo', '12345678', '132', 1);
+
+create table tbRotina (
+
+idRotina int primary key auto_increment,
+diasUteisRotina varchar(60),
+tempoDePausa int,
+fkUsuario int,
+foreign key (fkUsuario) references tbUsuario (idUsuario)
+
+);
+
+create table tbComputador(
+
+idComputador int auto_increment primary key,
+nomeComputador varchar(60),
+fabricanteSO varchar(60),
+tipoSistemaOperacional varchar(60),
+ultimaVerificacaoComponentes varchar(60),
+tempoAtividade varchar(60),
+fkEquipe int,
+fkUsuario int,
+foreign key (fkEquipe) references tbEquipe (idEquipe),
+foreign key (fkUsuario) references tbUsuario (idUsuario)
+);
+
+
+create table tbComponentes(
+
+idComponente int primary key auto_increment,
+nomeComponente varchar(60),
+tipoComponente varchar(60),
+minTempComponente int,
+maxTempComponente int,
+fkComputador int,
+foreign key (fkComputador) references tbComputador (idComputador)
+
+);
+
+
+create table tbLeituras(
+
+idLeitura int primary key auto_increment,
+dataLeitura varchar(60),
+fkComputador int,
+fkComponentes int,
+usoPorcentagemAtual Decimal(4,2)
+);
